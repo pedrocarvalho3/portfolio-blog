@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect } from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect } from 'react';
 
 export default function Header() {
   useEffect(() => {
@@ -13,7 +13,7 @@ export default function Header() {
       const element = document.getElementById(targetId || '');
       if (element) {
         element.scrollIntoView({
-          behavior: 'smooth'
+          behavior: 'smooth',
         });
       }
     };
@@ -31,14 +31,20 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex items-end justify-between container">
+    <header className="container flex items-end justify-between pt-8">
       <div>
         <Link href="/" className="text-gray-300">
-          <Image src="/pedro_dev.png" alt="Pedro Dev" width={300} height={300} className="w-48" />
+          <Image
+            src="/pedro_dev.png"
+            alt="Pedro Dev"
+            width={300}
+            height={300}
+            className="w-48"
+          />
         </Link>
       </div>
       <nav>
-      <ul className="flex space-x-12">
+        <ul className="flex space-x-12">
           <li>
             <Link href="/" className="nav-item">
               Home
@@ -50,8 +56,13 @@ export default function Header() {
             </a>
           </li>
           <li>
-            <a href="#projetos" className="nav-item">
+            <a href="#projects" className="nav-item">
               Projetos
+            </a>
+          </li>
+          <li>
+            <a href="#blog" className="nav-item">
+              Blog
             </a>
           </li>
           <li>
@@ -60,18 +71,17 @@ export default function Header() {
             </a>
           </li>
           <li>
-            <a href="#experiencia" className="nav-item">
+            <a href="#experience" className="nav-item">
               Experiência
             </a>
           </li>
           <li>
-            <a href="#contato" className="nav-item">
+            <a href="#contact" className="nav-item">
               Contato
             </a>
           </li>
         </ul>
       </nav>
     </header>
-  )
+  );
 }
-
