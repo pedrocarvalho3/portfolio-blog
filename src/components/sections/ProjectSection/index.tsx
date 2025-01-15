@@ -13,34 +13,79 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: 'E-commerce Platform',
+    title: 'Won Games',
     description:
-      'A full-stack e-commerce solution with Next.js, Node.js, and PostgreSQL.',
-    technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
-    githubLink: 'https://github.com/yourusername/ecommerce-platform',
-    liveLink: 'https://ecommerce-platform-demo.vercel.app',
+      'E-commerce completo criado no curso de React Avançado, com funcionalidades como listagem de produtos, carrinho, sistema de pagamentos e painel administrativo, seguindo boas práticas de acessibilidade e performance.',
+    technologies: [
+      'React',
+      'Next.js',
+      'GraphQL',
+      'Apollo Client',
+      'Stripe',
+      'TypeScript',
+      'Jest',
+      'Testing Library',
+      'Storybook',
+    ],
+    githubLink: 'https://github.com/pedrocarvalho3/nextshop-frontend',
+    liveLink: '',
   },
   {
-    title: 'Task Management App',
+    title: 'Painel Externo Integração Shopify',
     description:
-      'A React-based task management application with a .NET backend.',
-    technologies: ['React', 'C# .NET', 'SQL Server', 'Material-UI'],
-    githubLink: 'https://github.com/yourusername/task-management-app',
-    liveLink: 'https://task-app-demo.azurewebsites.net',
+      'Painel desenvolvido para empresas gerenciarem assinaturas, sincronizarem produtos e anunciarem itens em lojas Shopify, com integração de pagamentos via Mercado Pago.',
+    technologies: [
+      'Next.js',
+      'Tailwind CSS',
+      'ShadCN UI',
+      'Prisma ORM',
+      'PostgreSQL',
+      'Docker',
+      'NextAuth.js',
+      'MercadoPago',
+    ],
+    githubLink: '',
+    liveLink: 'https://external-panel-expogesso.vercel.app/',
   },
   {
-    title: 'Blog CMS',
-    description: 'A custom CMS for bloggers built with Next.js and GraphQL.',
-    technologies: ['Next.js', 'GraphQL', 'MongoDB', 'Tailwind CSS'],
-    githubLink: 'https://github.com/yourusername/blog-cms',
-    liveLink: 'https://blog-cms-demo.vercel.app',
+    title: 'Desenvolvimento de E-commerce',
+    description:
+      'Plataforma de e-commerce construída com Next.js e WordPress, apresentando um design responsivo e otimizado, com integração de sistemas de pagamento e APIs do Google.',
+    technologies: [
+      'Next.js',
+      'Tailwind CSS',
+      'ShadCN UI',
+      'GraphQL',
+      'WordPress',
+      'Figma',
+      'Google APIs',
+    ],
+    githubLink: '',
+    liveLink: 'https://www.rggesso.com/',
   },
   {
-    title: 'Fitness Tracker',
-    description: 'A mobile-first web app for tracking workouts and nutrition.',
-    technologies: ['React Native', 'Express', 'MongoDB', 'Chart.js'],
-    githubLink: 'https://github.com/yourusername/fitness-tracker',
-    liveLink: 'https://fitness-tracker-demo.netlify.app',
+    title: 'Daily Diet API Rocketseat Challenge',
+    description:
+      'API completa para controle de dieta diária, desenvolvida para reforçar conceitos de back-end e expandir conhecimentos em tecnologias modernas.',
+    technologies: ['Node.js', 'TypeScript', 'Fastify', 'Knex'],
+    githubLink: 'https://github.com/pedrocarvalho3/02-daily-diet-challenge',
+    liveLink: 'https://github.com/pedrocarvalho3/02-daily-diet-challenge',
+  },
+  {
+    title: 'Natours',
+    description:
+      'Site responsivo para uma agência fictícia de turismo, desenvolvido no curso de HTML e CSS Avançado, focado em boas práticas e uso de técnicas modernas de CSS.',
+    technologies: ['HTML', 'CSS', 'SCSS'],
+    githubLink: 'https://github.com/pedrocarvalho3/natours-interface',
+    liveLink: 'https://natuors-interface.netlify.app/',
+  },
+  {
+    title: 'Gerenciador de Games',
+    description:
+      'Sistema para gestão de games, incluindo categorias e plataformas, desenvolvido na matéria de POO, com foco em modularidade e reutilização de código.',
+    technologies: ['Java', 'JavaFX', 'Swing'],
+    githubLink: 'https://github.com/pedrocarvalho3/games-java-project',
+    liveLink: '',
   },
 ];
 

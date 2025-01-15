@@ -12,53 +12,61 @@ import { CalendarDays, Building2 } from 'lucide-react';
 // Mock data for professional experiences
 const experiences = [
   {
-    title: 'Senior Full Stack Developer',
-    company: 'TechCorp Solutions',
-    period: 'Jan 2021 - Present',
+    title: 'Desenvolvedor Full Stack',
+    company: 'Sistema LIFT',
+    period: 'Jan 2023 - Present',
     description:
-      'Lead developer for enterprise-level web applications, focusing on scalability and performance optimization.',
+      'Implementação e manutenção de funcionalidades em sistemas ERP voltados para gestão empresarial.',
     responsibilities: [
-      'Architected and implemented microservices using Node.js and TypeScript',
-      'Developed responsive front-end interfaces with Next.js and Tailwind CSS',
-      'Managed a team of 5 developers, overseeing code reviews and mentoring junior developers',
-      'Implemented CI/CD pipelines using GitHub Actions and Docker',
+      'Colaboração com equipes multidisciplinares para resolver problemas complexos e melhorar a experiência do usuário.',
+      'Otimização de performance e usabilidade do sistema, resultando em maior eficiência operacional.',
+      'Integração de plataformas de e-commerce via webhooks.',
+    ],
+    technologies: ['C#', '.NET', 'ASP.NET', 'Node.js', 'SQL Server'],
+  },
+  {
+    title: 'Freelancer - Painel Externo para Integração com Shopify',
+    company: 'Projeto Freelancer',
+    period: 'Nov 2024 - Jan 2024',
+    description:
+      'Desenvolvimento de painel para gerenciamento de assinaturas e integração com Shopify.',
+    responsibilities: [
+      'Planejei e desenvolvi um painel externo para empresas gerenciarem assinaturas, sincronizarem produtos e anunciarem itens em uma loja Shopify.',
+      'Integrei o Mercado Pago para pagamentos de assinaturas, permitindo atualizações automáticas de status e transações seguras.',
+      'Implementei o NextAuth.js para autenticação de usuários, incluindo login por Magic Link, oferecendo maior acessibilidade.',
+      'Desenvolvi o front-end utilizando Next.js, Tailwind CSS e ShadCN UI, garantindo um design moderno e responsivo.',
+      'Construí o back-end com Next.js API Routes, Prisma ORM e PostgreSQL, hospedado em um ambiente Docker.',
     ],
     technologies: [
       'Next.js',
-      'Node.js',
-      'TypeScript',
+      'Tailwind CSS',
+      'ShadCN UI',
+      'Prisma ORM',
       'PostgreSQL',
       'Docker',
-      'AWS',
     ],
   },
   {
-    title: 'Full Stack Developer',
-    company: 'InnovateSoft',
-    period: 'Mar 2018 - Dec 2020',
+    title: 'Freelancer - Desenvolvimento de E-commerce',
+    company: 'Projeto Freelancer',
+    period: 'Fev 2023',
     description:
-      'Worked on various client projects, developing full-stack web applications and e-commerce platforms.',
+      'Desenvolvimento de uma plataforma de e-commerce utilizando Next.js no front-end e WordPress no back-end.',
     responsibilities: [
-      'Built and maintained RESTful APIs using Express and TypeORM',
-      'Developed front-end applications using React and Redux',
-      'Integrated third-party services and APIs, including payment gateways and social media platforms',
-      'Optimized database queries and implemented caching strategies for improved performance',
+      'Desenvolvimento de uma plataforma de e-commerce utilizando Next.js no front-end e WordPress no back-end.',
+      'Consumo de dados do WordPress via GraphQL para carregamento dinâmico de produtos.',
+      'Design responsivo e otimizado para SEO utilizando Tailwind CSS e ShadCN UI, prototipado no Figma.',
+      'Integração de sistemas de pagamento e APIs do Google.',
+      'Integração de checkout de pagamento e implementação de sistema de cadastro.',
     ],
-    technologies: ['React', 'Express', 'TypeORM', 'MySQL', 'Redis', 'Azure'],
-  },
-  {
-    title: 'Junior Web Developer',
-    company: 'StartUp Dynamics',
-    period: 'Jun 2016 - Feb 2018',
-    description:
-      'Contributed to the development of a SaaS product for project management and collaboration.',
-    responsibilities: [
-      'Implemented new features and fixed bugs in the front-end using Angular',
-      'Assisted in the development of back-end services using C# and .NET Core',
-      'Participated in daily stand-ups and sprint planning meetings',
-      'Wrote unit tests and participated in code reviews',
+    technologies: [
+      'Next.js',
+      'Tailwind CSS',
+      'ShadCN UI',
+      'GraphQL',
+      'WordPress',
+      'Figma',
     ],
-    technologies: ['Angular', 'C#', '.NET Core', 'SQL Server', 'Git'],
   },
 ];
 
@@ -92,7 +100,7 @@ export default function ExperienceSection() {
               <CardContent>
                 <p className="mb-4 text-gray-700">{exp.description}</p>
                 <h4 className="mb-2 font-semibold text-gray-800">
-                  Key Responsibilities:
+                  Responsabilidades:
                 </h4>
                 <ul className="mb-4 list-disc space-y-1 pl-5 text-gray-700">
                   {exp.responsibilities.map((resp, respIndex) => (

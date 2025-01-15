@@ -46,10 +46,22 @@ export default function SkillsEditor() {
               <span className="text-[#9cdcfe]">frontEnd:</span> {'['}
               <br />
               {'      '}
-              <span className="text-[#ce9178]">"Next.js"</span>,
+              <span className="text-[#ce9178]">"React"</span>,
               <br />
               {'      '}
-              <span className="text-[#ce9178]">"Tailwind CSS"</span>,
+              <span className="text-[#ce9178]">"Next"</span>,
+              <br />
+              {'      '}
+              <span className="text-[#ce9178]">"Tailwind"</span>,
+              <br />
+              {'      '}
+              <span className="text-[#ce9178]">"Styled Components"</span>,
+              <br />
+              {'      '}
+              <span className="text-[#ce9178]">"FlexBox"</span>,
+              <br />
+              {'      '}
+              <span className="text-[#ce9178]">"Grid"</span>,
               <br />
               {'      '}
               <span className="text-[#ce9178]">"ShadCN UI"</span>,
@@ -75,19 +87,28 @@ export default function SkillsEditor() {
               <span className="text-[#ce9178]">"TypeScript"</span>,
               <br />
               {'      '}
-              <span className="text-[#ce9178]">"C# .NET"</span>,
+              <span className="text-[#ce9178]">"Fastify"</span>,
               <br />
               {'      '}
               <span className="text-[#ce9178]">"Express"</span>,
               <br />
               {'      '}
+              <span className="text-[#ce9178]">"Knex"</span>,
+              <br />
+              {'      '}
               <span className="text-[#ce9178]">"TypeORM"</span>,
               <br />
               {'      '}
-              <span className="text-[#ce9178]">"SQL Server"</span>,
+              <span className="text-[#ce9178]">"PrismaORM"</span>,
               <br />
               {'      '}
-              <span className="text-[#ce9178]">"PostgreSQL"</span>
+              <span className="text-[#ce9178]">"C#"</span>,
+              <br />
+              {'      '}
+              <span className="text-[#ce9178]">".NET"</span>,
+              <br />
+              {'      '}
+              <span className="text-[#ce9178]">"ASP.NET"</span>,
               <br />
               {'    '}],
               <br />
@@ -98,15 +119,11 @@ export default function SkillsEditor() {
               <span className="text-[#ce9178]">"REST APIs"</span>,
               <br />
               {'      '}
-              <span className="text-[#ce9178]">
-                "GraphQL (para consumo de dados do WordPress)"
-              </span>
+              <span className="text-[#ce9178]">"GraphQL"</span>
               ,
               <br />
               {'      '}
-              <span className="text-[#ce9178]">
-                "Webhooks (integração de plataformas de e-commerce)"
-              </span>
+              <span className="text-[#ce9178]">"Webhooks"</span>
               <br />
               {'    '}],
               <br />
@@ -117,13 +134,16 @@ export default function SkillsEditor() {
               {'    '}
               <span className="text-[#9cdcfe]">docker:</span>{' '}
               <span className="text-[#ce9178]">
-                "Armazenamento de banco de dados em containers Docker"
+                "Containerização de aplicativos"
               </span>
               ,
               <br />
               {'    '}
               <span className="text-[#9cdcfe]">bancoDeDados:</span>{' '}
-              <span className="text-[#ce9178]">"PostgreSQL, SQL Server"</span>,
+              <span className="text-[#ce9178]">
+                "Postgre, MySQL, SQLite, SQL Server e MongoDB"
+              </span>
+              ,
               <br />
               {'    '}
               <span className="text-[#9cdcfe]">metodologiasAgeis:</span>{' '}
@@ -132,19 +152,6 @@ export default function SkillsEditor() {
                 utilizando práticas ágeis"
               </span>
               ,
-              <br />
-              {'    '}
-              <span className="text-[#9cdcfe]">plataformasEcommerce:</span>{' '}
-              <span className="text-[#ce9178]">
-                "Integração com WordPress e WooCommerce"
-              </span>
-              ,
-              <br />
-              {'    '}
-              <span className="text-[#9cdcfe]">sistemasPagamento:</span>{' '}
-              <span className="text-[#ce9178]">
-                "Integração de sistemas de pagamento e APIs do Google"
-              </span>
               <br />
               {'  '}
               {'}'}
