@@ -2,7 +2,6 @@ import Social from '@/components/commons/Social';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import AboutSection from '@/components/sections/AboutSection';
-import BlogSection from '@/components/sections/BlogSection';
 import ContactSection from '@/components/sections/ContactSection';
 import ExperienceSection from '@/components/sections/ExperienceSection';
 import IntroSection from '@/components/sections/IntroSection';
