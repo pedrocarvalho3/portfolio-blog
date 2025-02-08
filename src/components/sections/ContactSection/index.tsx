@@ -16,8 +16,9 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { submitContact } from '@/actions/contact';
-import { useToast } from '@/hooks/use-toast';
 import { RefreshCcw } from 'lucide-react';
+import { Toaster } from 'sonner';
+import { toast } from 'sonner';
 
 const schema = z.object({
   name: z.string().min(1, 'Nome é obrigatório'),
@@ -27,7 +28,6 @@ const schema = z.object({
 
 export default function ContactSection() {
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -46,17 +46,14 @@ export default function ContactSection() {
     setIsLoading(false);
 
     if (result.success) {
-      toast({
-        title: 'Sucesso!',
+      toast.success('Sucesso!', {
         description: result.message,
       });
       form.reset();
     } else {
-      toast({
-        title: 'Erro',
+      toast.error('Erro', {
         description:
           'Houve um problema ao enviar sua mensagem. Por favor, tente novamente.',
-        variant: 'destructive',
       });
     }
   }
@@ -72,7 +69,11 @@ export default function ContactSection() {
               <FormItem>
                 <FormLabel className="text-gray-400">Nome</FormLabel>
                 <FormControl>
-                  <Input placeholder="Seu nome" {...field} />
+                  <Input
+                    placeholder="Seu nome"
+                    {...field}
+                    className="text-gray-100"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -85,7 +86,12 @@ export default function ContactSection() {
               <FormItem>
                 <FormLabel className="text-gray-400">E-mail</FormLabel>
                 <FormControl>
-                  <Input type="email" placeholder="seu@email.com" {...field} />
+                  <Input
+                    type="email"
+                    placeholder="seu@email.com"
+                    className="text-gray-100"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -98,14 +104,22 @@ export default function ContactSection() {
               <FormItem>
                 <FormLabel className="text-gray-400">Mensagem</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Sua mensagem" {...field} />
+                  <Textarea
+                    placeholder="Sua mensagem"
+                    {...field}
+                    className="h-24 text-gray-100"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
           <div className="flex items-center justify-between">
-            <Button type="submit" disabled={isLoading}>
+            <Button
+              type="submit"
+              disabled={isLoading}
+              className="bg-teal-600 hover:bg-teal-500"
+            >
               {isLoading && (
                 <RefreshCcw className="mr-2 h-4 w-4 animate-spin" />
               )}
@@ -113,13 +127,14 @@ export default function ContactSection() {
             </Button>
             <Button
               variant="outline"
-              onClick={() => window.open('/seu-curriculo.pdf', '_blank')}
+              onClick={() => window.open('/meu-cv.pdf', '_blank')}
             >
               Baixar Currículo
             </Button>
           </div>
         </form>
       </Form>
+      <Toaster />
     </main>
   );
 }
