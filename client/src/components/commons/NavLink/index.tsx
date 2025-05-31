@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { NavItem } from "../../types";
+import { NavItem } from "@/types/nav-item";
+import Link from "next/link"; 
 
 const NavLink: React.FC<NavItem> = ({ href, label, isExternal }) => {
   const Component = href.startsWith('#') ? 'a' : Link;

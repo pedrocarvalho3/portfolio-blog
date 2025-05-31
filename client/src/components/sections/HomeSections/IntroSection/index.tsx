@@ -9,9 +9,10 @@ export default function IntroSection() {
 
   return (
     <motion.div
+      id="home"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.8 }}  
       className="flex min-h-[90vh] flex-col items-center justify-center p-4 text-white"
     >
       <div className="mx-auto max-w-3xl text-center">

@@ -1,7 +1,6 @@
-import HomeTemplate from "@/components/templates/HomeTemplate";
 
 export default function Home() {
   return (
-    <HomeTemplate />
+    <h1>Hello World</h1>
   );
 }
