@@ -1,4 +1,4 @@
-export const GET_HEADER_QUERY = `
+export const GET_GLOBAL_DATA_QUERY = `
   query GetGlobalData {
     global {
       header {
