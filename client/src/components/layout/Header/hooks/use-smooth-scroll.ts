@@ -1,20 +1,23 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 const useSmoothScroll = () => {
   useEffect(() => {
     const smoothScroll = (e: MouseEvent) => {
-      e.preventDefault();
-      const target = e.target as HTMLAnchorElement;
-      const targetId = target.getAttribute('href')?.substring(1);
-      const element = document.getElementById(targetId || '');
+      const target = (e.target as HTMLElement).closest('a');
+      if (!target) return;
+
+      const href = target.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+
+      const id = href.substring(1);
+      const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-        });
+        e.preventDefault();
+        element.scrollIntoView({ behavior: 'smooth' });
       }
     };
 
-    const links = document.querySelectorAll('nav a');
+    const links = document.querySelectorAll('a[href^="#"]');
     links.forEach(link => {
       link.addEventListener('click', smoothScroll as EventListener);
     });

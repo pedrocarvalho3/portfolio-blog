@@ -1,5 +1,5 @@
 import Social from '@/components/commons/Social';
-import AboutSection from '@/components/sections/HomeSections/AboutSection';
+import AboutSection from '@/components/templates/PortfolioTemplate/components/About';
 import ContactSection from '@/components/sections/HomeSections/ContactSection';
 import ExperienceSection from '@/components/sections/HomeSections/ExperienceSection';
 import IntroSection from '@/components/sections/HomeSections/IntroSection';
