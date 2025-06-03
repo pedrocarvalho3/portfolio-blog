@@ -70,9 +70,9 @@ const experiences = [
   },
 ];
 
-export default function ExperienceSection() {
+export default function Experience() {
   return (
-    <section className="px-4 py-16 md:px-8">
+    <section id="experience" className="px-4 py-16 md:px-8">
       <div className="mx-auto max-w-4xl">
         <h2 className="mb-8 text-center text-3xl font-bold text-gray-400 md:text-4xl">
           Experiência Profissional

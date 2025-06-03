@@ -89,9 +89,9 @@ const projects = [
   },
 ];
 
-export default function ProjectSection() {
+export default function Projects() {
   return (
-    <section className="bg-teal-700 px-4 py-16 md:px-8">
+    <section id="projects" className="bg-teal-700 px-4 py-16 md:px-8">
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-8 text-center text-6xl font-bold text-white md:text-4xl">
           Meus Projetos

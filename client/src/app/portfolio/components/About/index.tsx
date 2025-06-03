@@ -1,7 +1,7 @@
 import { Brain } from 'lucide-react';
 import Image from 'next/image';
 
-export default function AboutSection() {
+export default function About() {
   return (
     <section id="about" className="bg-[url('/bg-about.jpg')] bg-cover bg-center py-16">
       <div className="container mx-auto px-4">

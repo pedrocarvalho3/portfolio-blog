@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 
-export default function IntroSection() {
+export default function Hero() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (

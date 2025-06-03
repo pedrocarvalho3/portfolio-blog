@@ -1,7 +1,7 @@
 import SkillsEditor from '@/components/commons/SkillsEditor';
 import { Code } from 'lucide-react';
 
-export default function SkillsSection() {
+export default function Skills() {
   return (
     <main id="skills" className="default-container py-32">
       <div className="flex items-center justify-center gap-4 pb-8 text-5xl font-bold text-teal-200">

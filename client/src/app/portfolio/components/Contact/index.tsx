@@ -26,7 +26,7 @@ const schema = z.object({
   message: z.string().min(10, 'A mensagem deve ter pelo menos 10 caracteres'),
 });
 
-export default function ContactSection() {
+export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
@@ -59,7 +59,7 @@ export default function ContactSection() {
   }
 
   return (
-    <main className="mx-auto max-w-4xl py-8">
+    <main id="contact" className="mx-auto max-w-4xl py-8">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
