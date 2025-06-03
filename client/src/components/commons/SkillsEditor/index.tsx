@@ -1,166 +1,186 @@
-/* eslint-disable */
-/* prettier-ignore */
-import { FileCode, Circle } from 'lucide-react'
+/* eslint-disable react/no-unescaped-entities */
+"use client"
+
+import { motion, useInView } from "framer-motion"
+import { Circle, FileCode, Terminal } from "lucide-react"
+import { useRef } from "react"
 
 export default function SkillsEditor() {
+  const editorRef = useRef(null)
+  const isInView = useInView(editorRef, { once: true })
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: isInView ? 1 : 0,
+      y: isInView ? 0 : 50,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        duration: 0.5
+      }
+    },
+  }
+
   return (
-    <div className="w-full overflow-hidden rounded-lg bg-[#1e1e1e] text-white shadow-lg">
-      <div className="flex items-center bg-[#323233] px-4 py-2">
-        <div className="mr-4 flex space-x-2">
+    <div className="w-full overflow-hidden rounded-xl bg-gray-800 shadow-2xl border border-gray-700">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
+        transition={{ duration: 0.5 }}
+        className="flex items-center bg-gray-700 px-6 py-4"
+      >
+        <div className="flex space-x-2 mr-4">
           <Circle size={12} fill="#ff5f56" stroke="none" />
           <Circle size={12} fill="#ffbd2e" stroke="none" />
           <Circle size={12} fill="#27c93f" stroke="none" />
         </div>
-        <span className="text-sm opacity-50">skills.tsx</span>
-      </div>
+        <div className="flex items-center gap-2">
+          <Terminal className="w-4 h-4 text-teal-600" />
+          <span className="text-sm text-gray-300 font-medium">skills.tsx</span>
+        </div>
+      </motion.div>
 
       <div className="flex">
-        <div className="w-12 flex-shrink-0 bg-[#252526] p-2">
-          <FileCode size={24} className="text-[#7e7e7e]" />
-        </div>
-
-        <div
-          className="flex-grow overflow-auto p-4"
-          style={{ fontFamily: "'Fira Code', monospace" }}
+        {/* Sidebar */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -20 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="w-16 bg-gray-750 p-4 flex flex-col items-center"
         >
-          <pre className="text-sm leading-relaxed">
-            <code>
-              <span className="text-[#569cd6]">const</span>{' '}
-              <span className="text-[#4ec9b0]">skills</span>{' '}
-              <span className="text-[#9cdcfe]">=</span> {'{'}
-              <br />
-              {'  '}
-              <span className="text-[#9cdcfe]">habilidadesTecnicas:</span> {'{'}
-              <br />
-              {'    '}
-              <span className="text-[#9cdcfe]">
-                desenvolvimentoFullStack:
-              </span>{' '}
-              <span className="text-[#ce9178]">
-                "Experiência em criação e manutenção de sistemas web, com foco
-                em tecnologias modernas e melhores práticas"
-              </span>
-              ,
-              <br />
-              {'    '}
-              <span className="text-[#9cdcfe]">frontEnd:</span> {'['}
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"React"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"Next"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"Tailwind"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"Styled Components"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"FlexBox"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"Grid"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"ShadCN UI"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"Design Responsivo"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"Prototipação no Figma"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"Otimização para SEO"</span>
-              <br />
-              {'    '}],
-              <br />
-              {'    '}
-              <span className="text-[#9cdcfe]">backEnd:</span> {'['}
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"Node.js"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"TypeScript"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"Fastify"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"Express"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"Knex"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"TypeORM"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"PrismaORM"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"C#"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">".NET"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"ASP.NET"</span>,
-              <br />
-              {'    '}],
-              <br />
-              {'    '}
-              <span className="text-[#9cdcfe]">integracaoAPIs:</span> {'['}
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"REST APIs"</span>,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"GraphQL"</span>
-              ,
-              <br />
-              {'      '}
-              <span className="text-[#ce9178]">"Webhooks"</span>
-              <br />
-              {'    '}],
-              <br />
-              {'    '}
-              <span className="text-[#9cdcfe]">versionamentoCodigo:</span>{' '}
-              <span className="text-[#ce9178]">"Git, Github"</span>,
-              <br />
-              {'    '}
-              <span className="text-[#9cdcfe]">docker:</span>{' '}
-              <span className="text-[#ce9178]">
-                "Containerização de aplicativos"
-              </span>
-              ,
-              <br />
-              {'    '}
-              <span className="text-[#9cdcfe]">bancoDeDados:</span>{' '}
-              <span className="text-[#ce9178]">
-                "Postgre, MySQL, SQLite, SQL Server e MongoDB"
-              </span>
-              ,
-              <br />
-              {'    '}
-              <span className="text-[#9cdcfe]">metodologiasAgeis:</span>{' '}
-              <span className="text-[#ce9178]">
-                "Experiência em trabalhar com equipes multidisciplinares
-                utilizando práticas ágeis"
-              </span>
-              ,
-              <br />
-              {'  '}
-              {'}'}
-              <br />
-              {'}'};
-            </code>
-          </pre>
-        </div>
+          <FileCode size={24} className="text-gray-400" />
+        </motion.div>
+
+        {/* Code Content */}
+        <motion.div
+          ref={editorRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex-grow p-6 overflow-auto"
+          style={{ fontFamily: "'Fira Code', 'Courier New', monospace" }}
+        >
+          <div className="text-sm leading-relaxed space-y-1">
+            <motion.div variants={itemVariants} className="flex">
+              <span className="text-blue-400">const</span>
+              <span className="text-white ml-2">skills</span>
+              <span className="text-white ml-2">=</span>
+              <span className="text-yellow-400 ml-2">{"{"}</span>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="ml-4">
+              <span className="text-cyan-400">frontEnd:</span>
+              <span className="text-yellow-400 ml-2">[</span>
+            </motion.div>
+            {[
+              "React",
+              "Next.js",
+              "TypeScript",
+              "Tailwind CSS",
+              "Styled Components",
+              "Design Responsivo",
+              "Figma",
+              "SEO",
+            ].map((skill, index) => (
+              <motion.div key={skill} variants={itemVariants} className="ml-8">
+                <span className="text-green-400">"{skill}"</span>
+                {index < 7 && <span className="text-white">,</span>}
+              </motion.div>
+            ))}
+            <motion.div variants={itemVariants} className="ml-4">
+              <span className="text-yellow-400">],</span>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="ml-4 mt-4">
+              <span className="text-cyan-400">backEnd:</span>
+              <span className="text-yellow-400 ml-2">[</span>
+            </motion.div>
+            {["Node.js", "TypeScript", "Fastify", "Express", "Prisma ORM", "TypeORM", "C#", ".NET"].map(
+              (skill, index) => (
+                <motion.div key={skill} variants={itemVariants} className="ml-8">
+                  <span className="text-green-400">"{skill}"</span>
+                  {index < 7 && <span className="text-white">,</span>}
+                </motion.div>
+              ),
+            )}
+            <motion.div variants={itemVariants} className="ml-4">
+              <span className="text-yellow-400">],</span>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="ml-4 mt-4">
+              <span className="text-cyan-400">database:</span>
+              <span className="text-yellow-400 ml-2">[</span>
+            </motion.div>
+            {["PostgreSQL", "MySQL", "MongoDB", "SQLite", "SQL Server"].map((skill, index) => (
+              <motion.div key={skill} variants={itemVariants} className="ml-8">
+                <span className="text-green-400">"{skill}"</span>
+                {index < 4 && <span className="text-white">,</span>}
+              </motion.div>
+            ))}
+            <motion.div variants={itemVariants} className="ml-4">
+              <span className="text-yellow-400">],</span>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="ml-4 mt-4">
+              <span className="text-cyan-400">tools:</span>
+              <span className="text-yellow-400 ml-2">[</span>
+            </motion.div>
+            {["Git & GitHub", "Docker", "AWS (S3, EC2, RDS)", "REST APIs", "GraphQL", "Webhooks"].map(
+              (skill, index) => (
+                <motion.div key={skill} variants={itemVariants} className="ml-8">
+                  <span className="text-green-400">"{skill}"</span>
+                  {index < 5 && <span className="text-white">,</span>}
+                </motion.div>
+              ),
+            )}
+            <motion.div variants={itemVariants} className="ml-4">
+              <span className="text-yellow-400">],</span>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="ml-4 mt-4">
+              <span className="text-cyan-400">methodologies:</span>
+              <span className="text-green-400 ml-2">"Scrum, Kanban, Práticas Ágeis"</span>
+              <span className="text-white">,</span>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="ml-4 mt-4">
+              <span className="text-cyan-400">focus:</span>
+              <span className="text-green-400 ml-2">"Desenvolvimento Full-Stack com foco em performance e UX"</span>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="mt-2">
+              <span className="text-yellow-400">{"}"}</span>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="bg-gray-700 px-6 py-3 flex justify-between items-center text-xs text-gray-400"
+      >
+        <div className="flex items-center gap-4">
+          <span>✓ Syntax OK</span>
+          <span>📦 30+ Technologies</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 bg-teal-600 rounded-full animate-pulse"></div>
+          <span>Ready to code</span>
+        </div>
+      </motion.div>
     </div>
-  );
+  )
 }
